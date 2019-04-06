@@ -5,10 +5,10 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-public class MyDialog {
+class MyDialog {
     private static Dialog mDialog;
 
-    public static void showDialog(Context context) {
+    static void showDialog(Context context) {
         mDialog = new Dialog(context, R.style.CustomProgressDialog);
         mDialog.addContentView(
                 new ProgressBar(context),
@@ -20,7 +20,7 @@ public class MyDialog {
         }
     }
 
-    public static void dismissDialog() {
+    static void dismissDialog() {
         if (mDialog != null && mDialog.isShowing()) {
             mDialog.dismiss();
         }

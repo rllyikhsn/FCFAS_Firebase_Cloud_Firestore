@@ -12,7 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/margin16"
         android:hint="@string/hint_doc_id"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        tools:ignore="Autofill" />
 
     <ScrollView
         android:id="@+id/body"

@@ -83,7 +83,7 @@ public class Query extends base implements View.OnClickListener {
         nested2.put(FIELD_LAST_NAME, "Fcfas");
 
         Map<String, Object> nested3 = new HashMap<>();
-        nested3.put(FIELD_FIRST_NAME, "Alif");
+        nested3.put(FIELD_FIRST_NAME, "Clie");
         nested3.put(FIELD_LAST_NAME, "Nur");
 
         Map<String, Object> nested4 = new HashMap<>();
@@ -92,12 +92,12 @@ public class Query extends base implements View.OnClickListener {
 
         User user1 = new User(nested1, 50.12, 1980, "firebaser@gmail.com", new Date(), tags1, false);
         User user2 = new User(nested2, 55.34, 1985, "firebasefcfas@gmail.com", new Date(), tags2, true);
-        User user3 = new User(nested3, 60.56, 1990, "alif@gmail.com", new Date(), tags3, true);
+        User user3 = new User(nested3, 60.56, 1990, "clie@gmail.com", new Date(), tags3, true);
         User user4 = new User(nested4, 65.78, 1995, "test@gmail.com", new Date(), tags4, false);
 
         colRefUsers.document("Firebaser").set(user1);
         colRefUsers.document("FirebaserFcafas").set(user2);
-        colRefUsers.document("Alif").set(user3);
+        colRefUsers.document("Clie").set(user3);
         colRefUsers.document("Test").set(user4);
     }
 
@@ -116,11 +116,13 @@ public class Query extends base implements View.OnClickListener {
                     mTextView.setText(null);
                 }
 
+                assert querySnapshots != null;
                 if (querySnapshots.getDocuments().size() > 0) {
                     for (DocumentSnapshot document : querySnapshots) {
                         User user = document.toObject(User.class);
                         mTextView.append(document.getId());
                         mTextView.append("\n");
+                        assert user != null;
                         mTextView.append("Born: " + user.born);
                         mTextView.append("\n");
                         mTextView.append("Weight: " + user.weight);
@@ -167,11 +169,13 @@ public class Query extends base implements View.OnClickListener {
                     mTextView.setText(null);
                 }
 
+                assert querySnapshots != null;
                 if (querySnapshots.getDocuments().size() > 0) {
                     for (DocumentSnapshot document : querySnapshots) {
                         User user = document.toObject(User.class);
                         mTextView.append(document.getId());
                         mTextView.append("\n");
+                        assert user != null;
                         mTextView.append("Born: " + user.born);
                         mTextView.append("\n");
                         mTextView.append("Weight: " + user.weight);
